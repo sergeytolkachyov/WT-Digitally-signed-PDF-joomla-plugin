@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.10" type="plugin" group="system" method="upgrade">
+    <name>PLG_WT_DIGITALLY_SIGNED_PDF</name>
+    <author>Serhey Tolkachyov</author>
+    <creationDate>16/03/2022</creationDate>
+    <copyright>2022 Sergey Tolkachyov</copyright>
+    <license>GNU General Public License v3.0</license>
+    <authorEmail>info@web-tolk.ru</authorEmail>
+    <authorUrl>https://web-tolk.ru</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_WT_DIGITALLY_SIGNED_PDF_DESC</description>
+	<scriptfile>script.php</scriptfile>
+    <files>
+        <filename plugin="wt_digitally_signed_pdf">wt_digitally_signed_pdf.php</filename>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <folder>layouts</folder>
+    </files>
+    <media folder="media" destination="plg_system_wt_digitally_signed_pdf">
+        <folder>img</folder>
+    </media>
+    <languages folder="language" client="administrator">
+        <language tag="en-GB">en-GB/en-GB.plg_system_wt_digitally_signed_pdf.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_system_wt_digitally_signed_pdf.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_wt_digitally_signed_pdf.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_system_wt_digitally_signed_pdf.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field addfieldpath="plugins/system/wt_digitally_signed_pdf/fields" type="plugininfo" name="plugininfo"/>
+                <field addfieldpath="plugins/system/wt_digitally_signed_pdf/fields" type="checklibraries" name="checklibraries"/>
+                <field type="filelist" name="layout" label="PLG_WT_DIGITALLY_SIGNED_PDF_LAYOUT" directory="plugins/system/wt_digitally_signed_pdf/layouts" stripext="true" hide_default="true"/>
+                <field type="filelist" name="sign_icon" label="PLG_WT_DIGITALLY_SIGNED_PDF_SIGN_ICON" directory="media/plg_system_wt_digitally_signed_pdf/img" hide_default="true"/>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" name="WebTolk Update Server for WT Digitally signed PDF">https://web-tolk.ru/component/swjprojects/jupdate.html?element=wt_digitally_signed_pdf</server>
+    </updateservers>
+</extension>
